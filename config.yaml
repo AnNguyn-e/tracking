@@ -1,0 +1,48 @@
+# YOLOv8 Object Detection Configuration
+
+# Model settings
+model:
+  name: "yolov8m"  # Options: yolov8n, yolov8s, yolov8m, yolov8l, yolov8x
+  pretrained: true
+  device: 0  # GPU device ID, or 'cpu'
+
+# Detection settings
+detection:
+  confidence_threshold: 0.45
+  iou_threshold: 0.45
+  max_detections: 100
+
+# Dice detection specific settings
+dice_detection:
+  enabled: true
+  auto_count_pips: true  # Automatically count pip numbers
+  pip_threshold: 200  # Brightness threshold for pip detection
+  confidence_threshold: 0.45
+
+# Input/Output paths
+paths:
+  data_dir: "./data"
+  models_dir: "./models"
+  results_dir: "./results"
+  
+# Input sources
+input:
+  # Options: image path, video path, webcam (0), YouTube URL
+  source: 0  # Webcam
+  # source: "./data/sample.jpg"  # Image
+  # source: "./data/video.mp4"  # Video
+
+# Output settings
+output:
+  save_results: true
+  save_visualization: true
+  save_json: true
+  save_txt: true
+  
+# Visualization settings
+visualization:
+  draw_bounding_boxes: true
+  draw_labels: true
+  draw_confidence: true
+  line_thickness: 2
+  text_size: 1
